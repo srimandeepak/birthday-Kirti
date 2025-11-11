@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Better Half Kirti's Birthday 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #ffc0cb 0%, #ffb6c1 100%);
+      animation: sparkle 4s linear infinite;
+      position: relative;
+    }
+    @keyframes sparkle {
+      0% { background-color: #ffc0cb; }
+      50% { background-color: #ff9eb5; }
+      100% { background-color: #ffc0cb; }
+    }
+    .sparkle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite;
+    }
+    @keyframes twinkle {
+      0%,100%{opacity:0;}
+      50%{opacity:1;}
+    }
+    .slideshow {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      animation: slide 25s infinite;
+      background-size: cover;
+      background-position: center;
+      transition: background 1s ease-in-out;
+    }
+    @keyframes slide {
+      0%{background-image:url('1.jpg');}
+      20%{background-image:url('2.jpg');}
+      40%{background-image:url('3.jpg');}
+      60%{background-image:url('4.jpg');}
+      80%{background-image:url('5.jpg');}
+      100%{background-image:url('1.jpg');}
+    }
+    .content {
+      text-align: center;
+      position: relative;
+      color: #fff;
+      top: 30%;
+      text-shadow: 0 0 15px #ff66a3;
+    }
+    h1 {
+      font-size: 3em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from{ text-shadow:0 0 10px #ff99cc,0 0 20px #ff6699,0 0 30px #ff3366; }
+      to{ text-shadow:0 0 20px #ff6699,0 0 30px #ff3366,0 0 40px #ff0033; }
+    }
+    .message {
+      width: 70%;
+      margin: 20px auto;
+      font-size: 1.2em;
+      line-height: 1.8em;
+      background-color: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 15px;
+      animation: fadeIn 3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from{opacity:0;}
+      to{opacity:1;}
+    }
+    .panda {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      font-size: 3em;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+    }
+    .btn {
+      background: #ff66a3;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #ff3385;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow"></div>
+  <audio id="song" src="saiyara.mp3"></audio>
+  <div class="content">
+    <h1>Happy Birthday, Kirti 💕</h1>
+    <div class="message">
+      Tum meri zindagi ka sabse khoobsurat hissa ho.<br>
+      Jab bhi tum hasta ho, lagta hai saari duniya roshan ho gayi.<br>
+      Tum meri duaon ka sabse khaas hissa ho — har subah tumse shuru hoti hai aur har raat tum par khatam.<br><br>
+      Shayad main hamesha perfect na hoon, par tumhare bina main adhura hoon.<br>
+      Tum meri <em>Saiyara</em> ho — meri apni chhoti si duniya 💫<br><br>
+      Tumhara ye birthday utna hi khoobsurat ho jitna tumhara dil hai,<br>
+      aur tumhara har din mere pyaar se bhara rahe.<br><br>
+      — With all my love, forever 🐼❤️
+    </div>
+    <button class="btn" onclick="playSong()">Play Saiyara 🎵</button>
+    <div class="panda">🐼</div>
+  </div>
+
+  <script>
+    function playSong(){document.getElementById("song").play();}
+    for(let i=0;i<50;i++){
+      const s=document.createElement("div");
+      s.className="sparkle";
+      s.style.left=Math.random()*100+"vw";
+      s.style.top=Math.random()*100+"vh";
+      s.style.animationDelay=Math.random()*3+"s";
+      document.body.appendChild(s);
+    }
+  </script>
+</body>
+</html>
